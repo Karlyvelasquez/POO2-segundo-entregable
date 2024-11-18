@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Gerente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleGerente.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/botonsalir.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scriptProductos.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/ScriptEmpleado.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/scriptProveedores.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/scriptClientes.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/scriptVentas.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='js/scriptCategorias.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar lateral -->
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="#" id="productos">Productos</a></li>
+                <li><a href="#" id="clientes">Clientes</a></li>
+                <li><a href="#" id="ventas">Ventas</a></li>
+                <li><a href="#" id="empleados">Empleados</a></li>
+                <li><a href="#" id="proveedores">Proveedores</a></li>
+                <li><a href="#" id="categorias">Categorías</a></li>
+            </ul>
+            <button id="cerrar-sesion" class="logout-btn">Cerrar Sesión</button>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <h1>Bienvenid@, {{ session['usuario_nombre'] }}</h1>
+            <div id="main-content">
+                <!-- Aquí se cargará el contenido dinámico -->
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal para formulario de productos -->
+    <div id="modal-form" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modal-title">Agregar Producto</h2>
+            <form id="product-form">
+                <input type="hidden" id="producto_id" name="id">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+                <label for="descripcion">Descripción:</label>
+                <input type="text" id="descripcion" name="descripcion" required>
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" name="precio" required>
+                <label for="categoria_id">Categoría:</label>
+                <select id="categoria_id" name="categoria_id" required>
+                    <!-- Opciones dinámicas -->
+                </select>
+                <label for="stock">Stock:</label>
+                <input type="number" id="stock" name="stock" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para formulario de empleados -->
+    <div id="modal-employee-form" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="employee-modal-title">Editar Empleado</h2>
+            <form id="employee-form">
+                <input type="hidden" id="employee_id" name="id">
+                <label for="nombre_empleado">Nombre:</label>
+                <input type="text" id="nombre_empleado" name="nombre" disabled>
+                <label for="email_empleado">Email:</label>
+                <input type="email" id="email_empleado" name="email" required>
+                <label for="rol_id">Rol:</label>
+                <select id="rol_id" name="rol_id" required>
+                    <!-- Opciones cargadas dinámicamente -->
+                </select>
+                <label for="nueva_contrasena">Nueva Contraseña:</label>
+                <input type="password" id="nueva_contrasena" name="nueva_contrasena" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para formulario de proveedores -->
+    <div id="modal-provider-form" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="provider-modal-title">Agregar Proveedor</h2>
+            <form id="provider-form">
+                <input type="hidden" id="provider_id" name="id">
+                <label for="nombre_proveedor">Nombre:</label>
+                <input type="text" id="nombre_proveedor" name="nombre" required>
+                <label for="email_proveedor">Email:</label>
+                <input type="email" id="email_proveedor" name="email" required>
+                <label for="telefono_proveedor">Teléfono:</label>
+                <input type="text" id="telefono_proveedor" name="telefono" required>
+                <label for="direccion_proveedor">Dirección:</label>
+                <input type="text" id="direccion_proveedor" name="direccion" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para formulario de clientes -->
+    <div id="modal-client-form" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="client-modal-title">Agregar Cliente</h2>
+            <form id="client-form">
+                <input type="hidden" id="client_id" name="id">
+                <label for="nombre_cliente">Nombre:</label>
+                <input type="text" id="nombre_cliente" name="nombre" required>
+                <label for="email_cliente">Email:</label>
+                <input type="email" id="email_cliente" name="email" required>
+                <label for="telefono_cliente">Teléfono:</label>
+                <input type="text" id="telefono_cliente" name="telefono" required>
+                <label for="direccion_cliente">Dirección:</label>
+                <input type="text" id="direccion_cliente" name="direccion" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para formulario de categorías -->
+    <div id="modal-category-form" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="category-modal-title">Agregar Categoría</h2>
+            <form id="category-form">
+                <input type="hidden" id="category_id" name="id">
+                <label for="nombre_categoria">Nombre:</label>
+                <input type="text" id="nombre_categoria" name="nombre" required>
+                <button type="submit">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

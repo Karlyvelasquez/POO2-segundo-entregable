@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HERRAMIENTAS - FERRETERIA LA 32
+{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/herramientas.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="contenido">
+    <div class="mostrador" id="mostrador">
+        {% for producto in productos %}
+        {% if producto.categoria_nombre == 'Herramientas' %}
+            <div class="item" data-id="{{ producto.id }}">
+                <img src="{{ producto.imagen_url }}" alt="{{ producto.nombre }}">
+                <p class="descripcion">{{ producto.descripcion }}</p>
+                <span class="precio">$ {{ producto.precio }}</span>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Cuadro de detalles del producto -->
+<div class="seleccion" id="seleccion" style="display: none;">
+    <div class="cerrar" onclick="cerrar()">
+        &#x2715;
+    </div>
+    <div class="info">
+        <img src="" alt="Imagen del producto" id="img">
+        <h2 id="modelo"></h2>
+        <p id="descripcion"></p>
+        <span class="precio" id="precio"></span>
+        <div class="fila">
+            <button>AGREGAR AL CARRITO</button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/herramientas.js') }}"></script>
+{% endblock %}
+

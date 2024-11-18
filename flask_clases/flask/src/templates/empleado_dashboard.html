@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Empleado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styleEmpleado.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scriptVentasEmpleado.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar lateral -->
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="#" id="ventas">Ventas</a></li>
+                <li><a href="/index" id="logout" class="logout-btn">Cerrar Sesión</a></li>
+            </ul>
+        </aside>
+
+        <!-- Contenido principal -->
+        <main class="content">
+            <h1>Bienvenid@, {{ session['usuario_nombre'] }}</h1>
+            <div id="main-content">
+                <!-- Aquí se cargará el contenido dinámico -->
+            </div>
+        </main>
+    </div>
+    
+    <!-- Modal para formulario de ventas -->
+    <div id="modal-sale-form" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="sale-modal-title">Nueva Venta</h2>
+            <form id="sale-form">
+                <input type="hidden" id="usuario_id" name="usuario_id" value="{{ session['usuario_id'] }}">
+                
+                <label for="cliente_id">Cliente:</label>
+                <select id="cliente_id" name="cliente_id" required>
+                    <!-- Opciones cargadas dinámicamente -->
+                </select>
+
+                <div id="productos-container">
+                    <div class="producto-item">
+                        <label for="producto_id">Producto:</label>
+                        <select class="producto_id" required>
+                            <!-- Opciones cargadas dinámicamente -->
+                        </select>
+
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" class="cantidad" min="1" required>
+                    </div>
+                </div>
+
+                <button type="button" id="add-product">Agregar Producto</button>
+
+                <label for="total">Total:</label>
+                <input type="text" id="total" name="total" readonly>
+
+                <button type="submit">Guardar Venta</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
+

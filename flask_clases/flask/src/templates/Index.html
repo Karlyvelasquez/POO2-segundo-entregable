@@ -1,0 +1,701 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Inicio | Ferreteria la 32 </title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/card.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/flexbox.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estilos.css') }}">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/whatsapp.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/boton_del_inicio.css') }}">
+<link rel="shortcut icon" href="{{ url_for('static', filename='logo.png') }}" type="image/x-icon">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat+Subrayada:wght@700&family=Roboto:ital,wght@0,700;0,900;1,700&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<!--<script src="{{ url_for('static', filename='js/jquery.easydropdown.js') }}"></script>-->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/fwslider.css') }}" media="all">
+<script src="{{ url_for('static', filename='js/jquery-ui.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/fwslider.js') }}"></script>
+
+<!--end slider -->
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
+</head>
+<body>
+	<div class="header">
+		<div class="container">
+			<div class="logo">
+				<a href="index.html"><img src=""></a>
+			</div>
+			<div class="menu">
+			
+			<nav class="navegacion">
+				<ul class="menu">
+					
+					<li><a href="/index">INICIO</a></li>
+					
+					<li><a href="/contacto">CONTACTANOS</a></li>
+					<li><a href="/index">CATALOGO</a>
+						<ul class="submenu">
+							<li><a href="/Hogar">Hogar</a></li>
+							<li><a href="/Iluminacion">Iluminacion</a></li>
+							<li><a href="/Herramientas">Herramientas</a></li>
+							<li><a href="/Pinturas">Pinturas</a></li>
+						
+						</ul>
+				      
+						
+						
+						<script type="text/javascript" src="{{ url_for('static', filename='js/responsive-nav.js') }}"></script>
+
+				    </div>		
+	    	    </div>
+	            <div class="header_right">
+	    		  <!-- start search-->
+				      <div class="search-box">
+							
+							</div>
+						</div>
+						<!----search-scripts---->
+						<script src="{{ url_for('static', filename='js/classie.js') }}"></script>
+						<script src="{{ url_for('static', filename='js/uisearch.js') }}"></script>
+						
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+						<!----//search-scripts---->
+						<button class="button-26" role="button"></button>   
+						<a href="/login"><button class="button-26" role="button">INICIAR SESIÓN</button>    </a> 
+				    <ul class="icon1 sub-icon1 profile_img">
+						
+					 <li><a class="iconol" href="#"> </a>
+						<ul class="sub-icon2 list">
+						  <div class="product_control_buttons">
+							<a href="#"><img src="{{ url_for('static', filename='images/edit.png') }}" alt=""/></a>
+							<a href="#"><img src="{{ url_for('static', filename='images/close_edit.png') }}" alt=""/></a>
+							
+						  </div>
+						   <div class="clear"></div>
+						<div class="login_button"><a href="login.html">Iniciar sesion</a></div>
+                                
+							 <div class="clear"></div>
+						  </div>
+						  <div class="clear"></div>
+						</ul>
+					 </li>
+				   </ul>
+		           <div class="clear"></div>
+	       </div>
+	      </div>
+		 </div>
+	    </div>
+	</div> 
+	<div class="banner">
+	<!-- LAS IMAGENES DE SLIDER  -->
+       <div id="fwslider">
+         <div class="slider_container">
+            <div class="slide"> 
+                <!-- Slide image -->
+               <img src="https://images.unsplash.com/photo-1519520104014-df63821cb6f9?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-responsive" alt=""/>
+                <!-- /Slide image -->
+                <!-- Texts container -->
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                        <!-- Text title -->
+                     
+                        <!-- /Text title -->
+                    </div>
+                </div>
+               <!-- /Texts container -->
+            </div>
+            <!-- /Duplicate to create more slides -->
+            <div class="slide">
+               <img src="https://images.unsplash.com/photo-1631856954913-c751a44490ec?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="img-responsive" alt=""/>
+                <div class="slide_content">
+                    <div class="slide_content_wrap">
+                       
+                    </div>
+					
+                </div>
+            </div>
+            <!--/slide -->
+        </div>
+        <div class="timers"></div>
+        <div class="slidePrev"><span></span></div>
+        <div class="slideNext"><span></span></div>
+       </div>
+
+
+	    <!-- start features Area -->
+	<section class="features-area section_gap">
+		<div class="container">
+			<div class="row features-inner">
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{{ url_for('static', filename='images/f-icon1.png') }}" alt="">
+						</div>
+						<h6>Envíos a todo Medellín						</h6>
+						<p>Trabajamos con las mejores transportadoras de la ciudad</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{{ url_for('static', filename='images/f-icon2.png') }}" alt="">
+						</div>
+						<h6>Política de devoluciones						</h6>
+						<p>12 meses de garantia				</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{{ url_for('static', filename='images/f-icon3.png') }}" alt="">
+
+						</div>
+						<h6>Asesoría Personalizada						</h6>
+						<p>Tenemos un equipo especializado dispuesto a ayudarte					</p>
+					</div>
+				</div>
+				<!-- single features -->
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="single-features">
+						<div class="f-icon">
+							<img src="{{ url_for('static', filename='images/f-icon4.png') }}" alt="">
+						</div>
+						<h6>Calidad segura						</h6>
+						<p>Contamos con las mejores herramientas del mercado				</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- end features Area -->
+      
+	  <div class="main">
+		<div class="content-top">
+			<h2>¡CATEGORIA!</h2>
+			<p></p>
+		
+<!--   Tarjetas-->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+
+<section class="hero-section">
+  <div class="card-grid">
+    <a class="card" href="/Herramientas">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1467139840664-96b244a66825?q=80&w=2048&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
+      <div class="card__content">
+        <p class="card__category"><H3> LAS MEJORES HERRAMIENTAS </H3>  </p>
+        <h3 class="card__heading">   </h3>
+      </div>
+    </a>
+    <a class="card" href="/Pinturas">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1525909002-1b05e0c869d8?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
+      <div class="card__content">
+        <p class="card__category"><H3>PINTURAS  </H3></p>
+        <h3 class="card__heading">  ALTA DURABILIDAD</h3>
+      </div>
+    </a>
+    <a class="card" href="/Iluminacion">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1606170033648-5d55a3edf314?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
+      <div class="card__content">
+        <p class="card__category"><H3>IlUMINACIÓN INTERIORES </H3></p>
+        <h3 class="card__heading">  Y EXTERIORES </h3>
+      </div>
+    </li>
+    <a class="card" href="/Hogar">
+      <div class="card__background" style="background-image: url(https://images.unsplash.com/photo-1522444195799-478538b28823?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)"></div>
+      <div class="card__content">
+        <p class="card__category"><H3>LO MEJOR </H3> </p>
+        <h3 class="card__heading">PARA EL HOGAR</h3>
+      </div>
+    </a>
+  <div>
+	<!--   Icono de whatsapp-->
+	<div><a href="https://chat.whatsapp.com/CnNUrubutSFCA1zEAL7Ms9" class="btn-wsp" target="_blank">
+	    <i class="fa fa-whatsapp icono"></i>
+		<script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
+	</a></div>
+</section>
+<!--Fin   Tarjetas-->
+
+<!-- tarjetas de productos  -->
+
+
+        </div>
+<!-- tarjetas de productos -->
+	</div>
+  <style>
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.5); /* Cambia el valor de opacidad si es necesario */
+            z-index: 1; /* Asegura que la superposición esté sobre la imagen */
+        }
+        .content-bottom {
+            position: relative; /* Necesario para el posicionamiento absoluto del overlay */
+            background-image: url('https://gossipvehiculo.com/wp-content/uploads/2022/11/1-2-1536x1024.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 40px;
+            color: black;
+            overflow: hidden; /* Evita que los elementos internos sobresalgan */
+        }
+        h3 {
+            position: relative; /* Necesario para que el texto esté por encima de la superposición */
+            z-index: 2; /* Asegura que el texto esté sobre la superposición */
+        }
+    </style>
+</head>
+<body>
+    <div class="content-bottom">
+        <div class="overlay"></div> <!-- Aquí está la superposición -->
+        <div class="container">
+            <div class="row content_bottom-text">
+                <div class="col-md-7">
+                    <h3>¡AHORA PUEDES COMPRAR <br> LAS HERRAMIENTAS AL MEJOR PRECIO!</h3> 
+                    <p class="m_1"></p> 
+                    <p class="m_2"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles2.css') }}">
+</head>
+		
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<h2>PRODUCTOS <b>DESTACADOS</b></h2>
+						<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+						<!-- Carousel indicators -->
+						  
+						<!-- Wrapper for carousel items -->
+						<div class="carousel-inner">
+							<div class="carousel-item active">
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="{{ url_for('static', filename='images/TaladroIones.jpg') }}" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4>Taladro Con Iones de Litio</h4>
+												<p class="item-price"><strike></strike> <span>$500.000</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+			    
+											</div>                      
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/71r1UybuVwL._AC_SX679_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4>KingTool Kit de herramientas de reparación para el hogar											</h4>
+												<p class="item-price"><strike></strike> <span>$295.000											</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+												  
+											</div>                      
+										</div>
+									</div>      
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/61abJPDQVOL._AC_SX466_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h5>Kit de herramientas de eliminación de tapicería automática de nailon</h5>
+												<p class="item-price"><strike>$100.000</strike> <span> $77.000</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div>
+											   
+											</div>                      
+										</div>
+									</div>                              
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/71tu28P1KgL._AC_SX679_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h5>Juego de herramientas mecánicas, unidad de 1/4 pulgadas</h5>
+												<p class="item-price"><strike></strike> <span>$80.000</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+  
+											</div>                      
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/71JqwhLKKsL.__AC_SX300_SY300_QL70_FMwebp_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4>Juego de 10 accesorios de baño negro mate, juego de toallas de baño de 23.6 pulgadas</h4>
+												<p class="item-price"><strike></strike> <span>$102.900</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+						     
+											</div>                      
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/71J64pBv1pL.__AC_SX300_SY300_QL70_FMwebp_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h5>Pulverizador de pintura inalámbrico de 21 V, pistola de pintura en aerosol</h5>
+												<p class="item-price"><strike></strike> <span>$700.000</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+													</ul>
+												</div>
+         
+											</div>                      
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/51KZD1b3+KL._AC_SX679_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4>Juego de rodillos de pintura, brocha, bandeja de pintura - Juego de 10 piezas - Pincel de pintura 											</h4>
+												<p class="item-price"><strike></strike> <span>$210.000</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+      
+											</div>                      
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/616SuxNkO5L._AC_SX679_PIbundle-2,TopRight,0,0_SH20_.jpgmi modificacion/producto 1/monitor_curvo1.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4>Kit de revestimiento de suelo para interiores, semibrillante, ultra blanco											</h4>
+												<p class="item-price"><strike></strike> <span>$265.000											</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+        
+											</div>                      
+										</div>
+									</div>                      
+								</div>
+							</div>
+							<div class="carousel-item">
+								<div class="row">
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/61ECLzFKvXL._AC_SX679_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4> Medidor electrónico digital de nivel y ángulo, mide rangos de 0 a 90 y 0 a 180 grados										</h4>
+												<p class="item-price"><strike></strike> <span>$430.000											</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+        
+											</div>                      
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/71U1EqijYfL.__AC_SX300_SY300_QL70_FMwebp_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h5>Juego de destornilladores magnéticos de 131 piezas con clasificación de plástico											</h5>
+												<p class="item-price"><strike></strike> <span>$500.000											</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+         
+											</div>                      
+										</div>
+									</div>
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/81sTqVxjUDL._AC_SX679_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4> Organizador de tornillos de EE.UU., organizador de almacenamiento de hardware, gabinete de piezas de 44 cajones											</h4>
+												<p class="item-price"><strike></strike> <span>$200.000											</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+       
+											</div>                      
+										</div>
+									</div>  
+									<div class="col-sm-3">
+										<div class="thumb-wrapper">
+											<div class="img-box">
+												<img src="https://m.media-amazon.com/images/I/71waiPifZYL._AC_SX679_.jpg" class="img-fluid" alt="">
+											</div>
+											<div class="thumb-content">
+												<h4>Juego de cajas de herramientas de plástico portátiles										</h4>
+												<p class="item-price"><strike>$300.00</strike> <span>$100.000											</span></p>
+												<div class="star-rating">
+													<ul class="list-inline">
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star"></i></li>
+														<li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+													</ul>
+												</div>
+        
+											</div>                      
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- Carousel controls -->
+						<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+							<i class="fa fa-angle-left"></i>
+						</a>
+						<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+							<i class="fa fa-angle-right"></i>
+						</a>
+					</div>
+				
+				</div>
+			</div>
+
+			</div>
+	</div>
+		</div>
+	
+		<div class="container">
+			 <!--LOS CUADROS DE ABAJO DEL SLIDER DE DESTACADOS -->
+			<!--   Tarjetas-->
+<div class="title-lol">
+	<h1><FONT COLOR=":#000000">¡SERVICIOS QUE OFRECEMOS! </FONT> </h1>
+</div>
+<div class="container-lol">
+
+<div class="lol">
+<figure>
+	<img src="https://images.unsplash.com/photo-1647426994723-ab685e4b8c77?q=80&w=2123&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
+</figure>
+<div class="contenido-lol">
+	<h3>Pintura domestica</h3>
+	<p> Ofrece una renovación completa para el hogar, con acabados profesionales y personalizados que transforman cualquier espacio en un ambiente acogedor y estéticamente armonioso.</p>
+	<a href="https://chat.whatsapp.com/CnNUrubutSFCA1zEAL7Ms9">Contactar</a>
+</div>
+</div>
+<div class="lol">
+<figure>
+	<img src="{{ url_for('static', filename='images/afiladoHerramientas.jpg') }}" alt="">
+</figure>
+<div class="contenido-lol">
+	<h3>Servicio de afilado de herramientas</h3>
+	<p>Restauramos el filo de cuchillas, sierras, tijeras, y otras herramientas de corte, devolviéndoles la precisión y efectividad original. </p>
+	<a href="https://chat.whatsapp.com/CnNUrubutSFCA1zEAL7Ms9">Contactar</a>
+</div>
+</div>
+<div class="lol">
+<figure>
+	<img src="https://panel.serveiestacio.com/media/catalog/category/ferreteria-copia-de-llaves-servei-estacio.jpg">
+</figure>
+<div class="contenido-lol">
+	<h3>Servicio de copiado de llaves</h3>
+	<p>Ofrecemos un servicio rápido y preciso de duplicado de llaves para hogares, oficinas y vehículos.  </p>
+	<a href="https://chat.whatsapp.com/CnNUrubutSFCA1zEAL7Ms9">Contactar</a>
+</div>
+</div>
+</div>
+<!--Fin  -->
+				</div>
+			</div>
+		 </div>
+		</div>
+		<div class="footer">
+			  <div class="container">
+				  <div class="row">
+					  <div class="col-md-3">
+						  <ul class="footer_box">
+							  <h4>Contacto</h4>
+							  <li><a href="#">Dirección: Cra. 32 #58 – 38 , Medellín, Antioquia</a></li>
+							  <li><a href="#">Teléfono: +57 (604) 6214933</a></li>
+							  <li><a href="#">Correo: Ferreteriala32@gmail.com</a></li>
+						  </ul>
+					  </div>
+					  <div class="col-md-3">
+						  <ul class="footer_box">
+							  <h4>Mi cuenta</h4>
+							  <li><a href="/index">Inicio</a></li>
+							  <li><a href="/login">Iniciar sesion</a></li>
+							
+						  </ul>
+					  </div>
+					  <div class="col-md-3">
+						  <ul class="footer_box">
+							  <h4>Atención al cliente</h4>
+							  <li><a href="#">Teléfono: +57 (604) 6928933</a></li>
+							  <li><a href="#"></a></li>
+							  <li><a href="#"></a></li>
+							  <li><a href="#"></a></li>
+							  <li><a href="#"></a></li>
+						  </ul>
+					  </div>
+					  <div class="col-md-3">
+						  <ul class="footer_box">
+							  <h4></h4>
+							  <div class="footer_search">
+								 <form>
+						  
+								 </form>
+							  </div>
+							  <ul class="social">	
+								<li class="facebook"><a href="#"><span> </span></a></li>
+								<li class="twitter"><a href="#"><span> </span></a></li>
+								<li class="instagram"><a href="#"><span> </span></a></li>	
+								<li class="pinterest"><a href="#"><span> </span></a></li>	
+								<li class="youtube"><a href="#"><span> </span></a></li>										  				
+							  </ul>
+				 
+							  </ul>
+						   </dd>
+						   </dl>
+					 </div>
+			  </div>
+		  </div>
+		  
+</body>	
+</html>

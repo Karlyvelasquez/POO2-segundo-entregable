@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vista Gerente</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Menú</h2>
+            <ul>
+                <li><a href="#" id="productos">Productos</a></li>
+                <li><a href="#">Clientes</a></li>
+                <li><a href="#">Ventas</a></li>
+                <li><a href="#">Empleados</a></li>
+                <li><a href="#">Proveedores</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <h1>Bienvenido, Gerente</h1>
+            <div id="main-content">
+                <!-- Aquí se cargará la tabla de productos -->
+            </div>
+        </main>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#productos').on('click', function(e) {
+                e.preventDefault();
+                $.get('/productos', function(data) {
+                    let tabla = `<table>
+                                    <thead>
+                                        <tr>
+                                            <th>ID</th>
+                                            <th>Nombre</th>
+                                            <th>Descripción</th>
+                                            <th>Precio</th>
+                                            <th>Categoría</th>
+                                            <th>Stock</th>
+                                            <th>Acciones</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>`;
+                    data.forEach(producto => {
+                        tabla += `<tr>
+                                    <td>${producto[0]}</td>
+                                    <td>${producto[1]}</td>
+                                    <td>${producto[2]}</td>
+                                    <td>${producto[3]}</td>
+                                    <td>${producto[4]}</td>
+                                    <td>${producto[5]}</td>
+                                    <td>
+                                        <button class="editar" data-id="${producto[0]}">Editar</button>
+                                        <button class="eliminar" data-id="${producto[0]}">Eliminar</button>
+                                    </td>
+                                  </tr>`;
+                    });
+                    tabla += `</tbody></table>`;
+                    $('#main-content').html(tabla);
+                });
+            });
+        });
+    </script>
+</body>
+</html>

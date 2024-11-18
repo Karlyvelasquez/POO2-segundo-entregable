@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actualizar Contraseña</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://plus.unsplash.com/premium_photo-1664301142625-e1742b2906e9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); /* Imagen de fondo */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .update-container {
+            background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con algo de transparencia */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px; /* Ancho máximo */
+            width: 100%;
+        }
+        h2 {
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-align: center;
+            font-weight: 500; /* Fuente en negrita */
+        }
+        .form-group label {
+            color: #333; /* Color de las etiquetas */
+            font-weight: 500; /* Fuente en negrita */
+        }
+        .form-control {
+            border-radius: 30px; /* Bordes más redondeados para modernidad */
+            padding: 8px 15px; /* Espaciado reducido */
+            font-size: 0.9rem; /* Tamaño de fuente reducido */
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            border-radius: 30px; /* Botón redondeado */
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Ocupa todo el ancho */
+        }
+        .btn-primary:hover {
+            background-color: #0056b3; /* Cambio de color al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <div class="update-container">
+        <h2>Actualizar Contraseña</h2>
+        <form action="/actualizar" method="POST">
+            <div class="form-group">
+                <label for="cedula">Cédula</label>
+                <input type="text" class="form-control" id="cedula" name="cedula" required>
+            </div>
+            <div class="form-group">
+                <label for="contraseña">Nueva Contraseña</label>
+                <input type="password" class="form-control" id="contraseña" name="contraseña" required minlength="8" pattern="(?=.*[0-9])(?=.*[a-zA-Z]).{8,}">
+                <small class="form-text text-muted">Mínimo 8 caracteres, debe contener letras y números.</small>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Actualizar</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+

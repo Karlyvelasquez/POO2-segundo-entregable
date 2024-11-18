@@ -1,0 +1,16 @@
+.logout-btn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d9534f; /* Rojo */
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.logout-btn:hover {
+    background-color: #c9302c; /* Rojo más oscuro */
+}

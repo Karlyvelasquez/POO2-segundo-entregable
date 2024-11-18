@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Iniciar sesión</title>
+</head>
+
+<body>
+    
+
+    <div class="wrapper">
+        <span class="bg-animate"></span>
+        <span class="bg-animate2"></span>
+
+        <!-- Formulario de inicio de sesión -->
+        <div class="form-box login">
+            <h2 class="animation" style="--i:0; --j:21;">Inicia sesión</h2>
+            <form action="/login" method="post">
+                <div class="input-box animation" style="--i:1; --j:22;">
+                    <input type="email" name="email" required>
+                    <label>Correo electrónico</label>
+                    <i class='bx bxs-user'></i>
+                </div>
+                <div class="input-box animation" style="--i:2; --j:23;">
+                    <input type="password" name="contraseña" required>
+                    <label>Contraseña</label>
+                    <i class='bx bxs-lock-alt'></i>
+                </div>
+                <button type="submit" class="btn animation" style="--i:3; --j:24;">Iniciar sesión</button>
+                <div class="logreg-link animation" style="--i:4; --j:25;">
+                    <p>¿Olvidaste la contraseña? <a href="#" class="registro-link">Recuperar cuenta</a></p>
+                    <p>Volver a <a href="{{ url_for('index') }}" class="registro-link">Inicio</a></p>
+                </div>
+            </form>
+        </div>
+
+        <!-- Información adicional -->
+        <div class="info-text login">
+            <h2 class="animation" style="--i:0; --j:20;">Bienvenido a Ferretería la 32</h2>
+            <p class="animation" style="--i:1; --j:21;">Tu hogar en las mejores manos</p>
+        </div>
+
+<div class="form-box registro">
+    <h2 class="animation" style="--i:17; --j:0;">Recupera tu cuenta</h2>
+    <form action="/cambiar_contraseña" method="post">  <!-- Cambié la URL aquí -->
+        <div class="input-box animation" style="--i:18; --j:1;">
+            <input type="email" name="email" required>
+            <label>Email</label>
+            <i class='bx bxs-envelope'></i>
+        </div>
+        <div class="input-box animation" style="--i:19; --j:2;">
+            <input type="password" name="nueva_contraseña" required>
+            <label>Nueva contraseña</label>
+            <i class='bx bxs-lock-alt'></i>
+        </div>
+        <button type="submit" class="btn animation" style="--i:21; --j:4;">Confirmar</button>
+        <div class="logreg-link animation" style="--i:22; --j:5;">
+            <a href="#" class="login-link">Iniciar sesión</a>
+        </div>
+    </form>
+</div>
+
+
+        <!-- Información adicional en la sección de registro -->
+        <div class="info-text registro">
+            <h2 class="animation" style="--i:17; --j:0;">Bienvenido a Ferretería la 32</h2>
+            <p class="animation" style="--i:18; --j:1;">Tu hogar en las mejores manos</p>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script (1).js') }}"></script>
+</body>
+
+</html>
